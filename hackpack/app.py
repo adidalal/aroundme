@@ -1,4 +1,5 @@
-# imports
+
+#imports
 from flask import Flask
 from flask import render_template
 from flask import url_for
@@ -24,7 +25,7 @@ def voice():
 # SMS Request URL
 @app.route('/sms', methods=['GET', 'POST'])
 def sms():
-	msg = request.values.get('Body', None)
+    msg = request.values.get('Body', None)
     if msg is not None:
 	param = re.split('\sin\s|\snear\s|\saround\s|\sby\s', msg, flags=re.IGNORECASE)
 	data = foursquare.search(param[1], param[0])
