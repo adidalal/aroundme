@@ -5,7 +5,7 @@ import urllib
 def CompressURL(url):
 	apiurl = "http://mtny.mobi/api/?url="
 	quoted = urllib.quote_plus(url)
-	append = "&ismobile=false&type=simple"
+	appended = "&type=simple"
 	shorturl = urllib.urlopen(apiurl + quoted + append).read()
 	return shorturl
 
