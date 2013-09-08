@@ -3,9 +3,10 @@ import urllib2
 import urllib
 
 def CompressURL(url):
-	apiurl = "http://to.ly/api.php?longurl="
+	apiurl = "http://mtny.mobi/api/?url="
 	quoted = urllib.quote_plus(url)
-	shorturl = urllib.urlopen(apiurl + quoted).read()
+	append = "&ismobile=false&type=simple"
+	shorturl = urllib.urlopen(apiurl + quoted + append).read()
 	return shorturl
 
 def parseBody(string):
