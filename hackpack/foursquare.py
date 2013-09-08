@@ -3,7 +3,7 @@ import urllib2
 import urllib
 
 def CompressURL(url):
-	apiurl = "http://qr.cx/api/?longurl="
+	apiurl = "http://is.gd/create.php?format=simple&url="
 	quoted = urllib.quote_plus(url)
 	shorturl = urllib.urlopen(apiurl + quoted).read()
 	return shorturl
