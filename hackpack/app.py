@@ -25,8 +25,8 @@ def voice():
 @app.route('/sms', methods=['GET', 'POST'])
 def sms():
 	msg = request.values.get('Body', None)
-	print msg
     if msg is not None:
+	print msg
 	param = re.split('\sin\s|\snear\s|\saround\s|\sby\s', msg, flags=re.IGNORECASE)
 	data = foursquare.search(param[1], param[0])
 	print data
