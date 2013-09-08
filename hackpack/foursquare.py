@@ -23,8 +23,8 @@ def search(location, category):
 	# print url
 	data = json.load(urllib2.urlopen(url))
 	compressedURL = CompressURL(data["response"]["groups"][0]["items"][0]["venue"]["canonicalUrl"])
-	reply= [data["response"]["groups"][0]["items"][0]["location"][0]["address"], compressedURL]
 
+	reply= [data["response"]["groups"][0]["items"][0]["venue"]["name"], compressedURL]
 	return reply
 
 
@@ -32,6 +32,6 @@ def main():
 	# data = search("New Brunswick, NJ", "coffee")
 	print data[0]
 	print data[1]
-	
+
 if __name__ == "__main__":
 	main()
