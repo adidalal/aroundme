@@ -18,7 +18,7 @@ app.config.from_pyfile('local_settings.py')
 @app.route('/voice', methods=['GET', 'POST'])
 def voice():
     response = twiml.Response()
-    response.say("Please text AroundMe to find something that you want to eat or visit. An example could be 'Pizza in New York City'.")
+    response.say("Welcome to Around Me!Please text this number to find something that you want to eat or visit. An example could be 'Pizza in New York City'.")
     return str(response)
 
 
