@@ -1,5 +1,4 @@
-
-#imports
+# imports
 from flask import Flask
 from flask import render_template
 from flask import url_for
@@ -29,6 +28,7 @@ def sms():
     if msg is not None:
 	param = re.split('\sin\s|\snear\s|\saround\s|\sby\s', msg, flags=re.IGNORECASE)
 	data = foursquare.search(param[1], param[0])
+	print data
 	msg = (data[0] + " - " + data[1]+ "\n" + data[2])
     else:
    	msg = "Invalid"
