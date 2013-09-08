@@ -23,7 +23,7 @@ def search(location, category):
 	# get JSON
 	data = json.load(urllib2.urlopen(url))
 	# venue_name = data["response"]["groups"][0]["items"][0]["venue"]["name"]
-	venue_name = data["response"]["groups"][0]["items"][0]["venue"]["location"]["address"] + data["response"]["groups"][0]["items"][0]["venue"]["location"]["crossStreet"]
+	venue_name = data["response"]["groups"][0]["items"][0]["venue"]["location"]["address"] + " " + data["response"]["groups"][0]["items"][0]["venue"]["location"]["crossStreet"]
 	compressedURL = CompressURL(data["response"]["groups"][0]["items"][0]["venue"]["canonicalUrl"])
 
 	reply= [venue_name, compressedURL]
